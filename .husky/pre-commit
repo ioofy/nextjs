@@ -1,12 +1,12 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo '👷‍♂️🔧 Styling, testing and building your project before committing'
+echo '🏗️👷 Styling, testing and building your project before committing'
 
 # Check Prettier standards
 npm run check-format ||
 (
-    echo '❌ Oops Prettier checker failed. 🤢🤮
+    echo '🤢🤮🤢🤮 Its FOKING RAW - Your styling looks disgusting. 🤢🤮🤢🤮
             Prettier Check Failed. Run npm run format, add changes and try commit again.';
     false;
 )
@@ -14,15 +14,15 @@ npm run check-format ||
 # Check ESLint Standards
 npm run check-lint ||
 (
-        echo '😤 Eslint Checked Failed.! 😤 
+        echo '😤🏀👋😤 Get that weak shit out of here! 😤🏀👋😤
                 ESLint Check Failed. Make the required changes listed above, add changes and try to commit again.'
-        false; 
+        false;
 )
 
 # Check tsconfig standards
 npm run check-types ||
 (
-    echo '❌ Failed Type check ❌
+    echo '🤡😂❌🤡 Failed Type check. 🤡😂❌🤡
             Are you seriously trying to write that? Make the changes required above.'
     false;
 )
@@ -32,11 +32,11 @@ echo '🤔🤔🤔🤔... Alright.... Code looks good to me... Trying to build n
 
 npm run build ||
 (
-    echo '❌👷🔨❌ Better good but still error... Because your build failed ❌👷🔨❌
-            Next build failed: View the errors above to see why. 
+    echo '❌👷🔨❌ Better call Bob... Because your build failed ❌👷🔨❌
+            Next build failed: View the errors above to see why.
     '
     false;
 )
 
 # If everything passes... Now we can commit
-echo '✅✅✅✅ Success passed a configuration... I am committing this now. ✅✅✅✅'
+echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'
