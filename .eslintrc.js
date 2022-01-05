@@ -14,7 +14,7 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint"],
   rules: {
-    "require-jsdoc": off,
+    "require-jsdoc": 0,
   },
   settings: {
     react: {

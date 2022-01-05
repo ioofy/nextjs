@@ -3,7 +3,7 @@ import React from "react";
 const UserDetail = () => {
   return (
     <div>
-      <p>User Detail Pages</p>
+      <h1 className="font-xl">Ini adalah routes users details pages</h1>
     </div>
   );
 };

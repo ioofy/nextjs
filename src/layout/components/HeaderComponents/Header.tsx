@@ -8,7 +8,7 @@ const Header = () => {
       <NavMenu>
         {data.map((nav) => {
           return (
-            <NavMenuList key={nav.id}>
+            <NavMenuList key={nav.id} className="font-md">
               <NavMenuLink href={nav.route}>{nav.name}</NavMenuLink>
             </NavMenuList>
           );
