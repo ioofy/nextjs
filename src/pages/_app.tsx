@@ -1,14 +1,17 @@
 import React from "react";
-import type { AppProps } from "next/app";
+import { AppProps } from "next/app";
 import { Global } from "@emotion/react";
-import Layout from "@layout/Layout";
+import { Provider } from "next-auth/client";
+import Layout from "@layout/layout";
 import globalStyles from "@styles/global.styles";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-      <Global styles={globalStyles} />
-      <Component {...pageProps} />
+      <Provider session={pageProps.session}>
+        <Global styles={globalStyles} />
+        <Component {...pageProps} />
+      </Provider>
     </Layout>
   );
 }
