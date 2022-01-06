@@ -6,6 +6,8 @@
     "source.fixAll.eslint": true,
     "source.fixAll.format": true
   },
+
+  //optional peacock for my workbench you can delete this one
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#1f6fd0",
     "activityBar.activeBorder": "#ee90bb",

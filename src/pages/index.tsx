@@ -1,28 +1,42 @@
-import { signIn, useSession } from "next-auth/client";
+import styled from "@emotion/styled";
+import { getSession, signOut } from "next-auth/client";
 import React from "react";
 
-export default function Home() {
-  const [session, loading] = useSession();
+type HomePageProps = {
+  session: any;
+};
 
-  // When rendering client side don't display anything until loading is complete.
-  if (loading) {
-    return null;
-  }
+const ImageAvatar = styled.img`
+  width: 50px;
+  height: 50px;
+`;
 
-  // If no session exist, display a message to the user.
-  if (!loading && !session) {
-    return (
-      <div className="p-10 text-center text-3xl">
-        <h1>You must be logged in to see this page content.</h1>
-        <button onClick={() => signIn()}>Sign In</button>
-      </div>
-    );
-  }
+function HomePage({ session }: HomePageProps) {
+  console.log(session);
 
-  // If the session exists, display content to
   return (
-    <div className="p-10 text-center text-3xl">
-      <h1>Welcome {session?.user?.name}</h1>
+    <div>
+      <ImageAvatar src={session?.user.image} alt="avatar" /> Hi{" "}
+      {session?.user?.name}
+      <button onClick={() => signOut()}>SignOut</button>
     </div>
   );
 }
+
+export async function getServerSideProps(context: any) {
+  const session = await getSession(context);
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: { session },
+  };
+}
+
+export default HomePage;

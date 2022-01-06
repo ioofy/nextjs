@@ -11,6 +11,7 @@ export const NavMenu = styled.ul`
   display: flex;
   list-style: none;
   justify-content: center;
+  font-weight: 600;
 `;
 
 export const NavMenuList = styled.li`

@@ -14,7 +14,7 @@
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "pretty": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,

@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 
 const globalStyles = css`
-  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap");
 
   * {
     padding: 0px;
@@ -15,6 +15,9 @@ const globalStyles = css`
     color: inherit;
   }
 
+  body {
+  }
+
   .container {
     max-width: 900px;
     margin: auto;
@@ -22,19 +25,19 @@ const globalStyles = css`
     padding: 5px;
   }
   .font-xl {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
   .font-lg {
-    font-size: 1.25rem;
+    font-size: 2rem;
   }
 
   .font-md {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 
   .font-sm {
-    font-size: 0.875rem;
+    font-size: 1.02rem;
   }
 `;
 
