@@ -4,7 +4,7 @@ import { data } from "./constant";
 
 const Header = () => {
   return (
-    <Nav>
+    <Nav className="navbar">
       <NavMenu>
         {data.map((nav) => {
           return (
