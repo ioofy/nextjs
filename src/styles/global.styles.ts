@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { colors } from "./colors.styles";
 
 const globalStyles = css`
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap");
@@ -16,6 +17,7 @@ const globalStyles = css`
   }
 
   body {
+    background-color: ${colors.sweetwhite};
   }
 
   .container {

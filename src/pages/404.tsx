@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import styled from "@emotion/styled";
+import MetaData from "@components/SEOComponents/seo";
 
 const Button = styled.button`
   cursor: pointer;
@@ -19,6 +20,7 @@ const Header = styled.h1`
 const NotFound = () => {
   return (
     <>
+      <MetaData title="404 not found" />
       <Link href="/">
         <Button>Go back to homepages</Button>
       </Link>
