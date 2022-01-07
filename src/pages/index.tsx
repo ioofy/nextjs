@@ -1,3 +1,4 @@
+import MetaData from "@components/SEOComponents/seo";
 import styled from "@emotion/styled";
 import { getSession, signOut } from "next-auth/client";
 import React from "react";
@@ -11,15 +12,20 @@ const ImageAvatar = styled.img`
   height: 50px;
 `;
 
-function HomePage({ session }: HomePageProps) {
-  console.log(session);
+const ContentWrapperAccount = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+`;
 
+function HomePage({ session }: HomePageProps) {
   return (
-    <div>
-      <ImageAvatar src={session?.user.image} alt="avatar" /> Hi{" "}
-      {session?.user?.name}
+    <ContentWrapperAccount>
+      <MetaData title="Welcome" />
+      <ImageAvatar src={session?.user?.image} alt="avatar" />
+      Hi {session?.user?.name}
       <button onClick={() => signOut()}>SignOut</button>
-    </div>
+    </ContentWrapperAccount>
   );
 }
 

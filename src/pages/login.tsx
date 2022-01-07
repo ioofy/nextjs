@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
 import styled from "@emotion/styled";
 import ButtonLogin from "@components/ButtonLoginComponents/button-login";
+import MetaData from "@components/SEOComponents/seo";
 import Router from "next/router";
 import { colors } from "@styles/colors.styles";
 import { providers, getSession, signIn } from "next-auth/client";
+import React, { useEffect } from "react";
 
 type LoginPageProps = {
   providers: any;
@@ -30,7 +31,7 @@ const Wrap = styled.div`
 const LoginPage = ({ providers, session }: LoginPageProps) => {
   useEffect(() => {
     const onSession = async () => {
-      if (session) return Router.push("/");
+      if (session) return await Router.push("/");
     };
 
     onSession();
@@ -38,6 +39,7 @@ const LoginPage = ({ providers, session }: LoginPageProps) => {
 
   return (
     <ContentWrapper>
+      <MetaData title="Login Page" />
       <Wrap>
         <Header className="font-xl">Log in</Header>
         <ButtonLogin
@@ -46,13 +48,6 @@ const LoginPage = ({ providers, session }: LoginPageProps) => {
           altText="google"
           backgroundColor="#e16259"
           onClick={() => signIn(providers.google.id)}
-        />
-        <ButtonLogin
-          providerName={providers.facebook.name}
-          imageProvider="/fb.svg"
-          altText="fb"
-          backgroundColor="#1871ED"
-          onClick={() => signIn(providers.facebook.id)}
         />
         <ButtonLogin
           providerName={providers.github.name}

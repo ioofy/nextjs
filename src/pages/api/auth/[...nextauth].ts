@@ -24,21 +24,16 @@ const options = {
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
     }),
-
-    Providers.Facebook({
-      clientId: process.env.FACEBOOK_CLIENT_ID,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-    }),
   ],
 
   pages: {
     signIn: "/login",
   },
 
-  adaptor: Adapters.Prisma.Adapter({ prisma }),
+  adapter: Adapters.Prisma.Adapter({ prisma }),
 
   // SQL Database
-  // database: process.env.DATABASE_URL,
+  database: process.env.DATABASE_URL,
 };
 
 export default authHandler;
