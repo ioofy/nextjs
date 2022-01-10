@@ -2,6 +2,10 @@ import MetaData from "@components/SEOComponents/seo";
 import styled from "@emotion/styled";
 import React from "react";
 import { getSession, signOut } from "next-auth/client";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import { reducer } from "@interface/reducer";
+import { ConnectedTaskList } from "@components/HighOrderComponents/TasksList";
 
 interface HomePageProps {
  session: {
@@ -23,16 +27,21 @@ const ContentWrapperAccount = styled.div`
  width: 150px;
 `;
 
+const store = createStore(reducer);
+
 function HomePage({ session }: HomePageProps) {
  const { user } = session;
 
  return (
-  <ContentWrapperAccount>
-   <MetaData title="Welcome" />
-   <ImageAvatar src={user?.image} alt="avatar" />
-   Hi {user?.name}
-   <button onClick={() => signOut()}>SignOut</button>
-  </ContentWrapperAccount>
+  <Provider store={store}>
+   <ContentWrapperAccount>
+    <MetaData title="Welcome" />
+    <ImageAvatar src={user?.image} alt="avatar" />
+    Hi {user?.name}
+    <button onClick={() => signOut()}>SignOut</button>
+   </ContentWrapperAccount>
+   <ConnectedTaskList />
+  </Provider>
  );
 }
 

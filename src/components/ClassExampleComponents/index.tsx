@@ -5,7 +5,7 @@ interface Task {
  title: string;
 }
 
-interface TasksListProps {
+interface TasksListsProps {
  initialTasks: Task[];
 }
 
@@ -35,9 +35,9 @@ const DataButton = styled.button`
  border-radius: 5px;
 `;
 
-export class TaskList extends Component<TasksListProps, TasksListState> {
+export class TasksList extends Component<TasksListsProps, TasksListState> {
  // kita membuat constructor untuk pendefinisian atau menambahkan props tasks taskslistprops kedalam this.state
- constructor(props: TasksListProps) {
+ constructor(props: TasksListsProps) {
   super(props);
 
   this.state = {
@@ -48,7 +48,7 @@ export class TaskList extends Component<TasksListProps, TasksListState> {
 
  onAddNewTaskClick() {
   this.setState({
-   tasks: [...this.state.tasks, { title: "New Task Rendered" }],
+   tasks: [...this.state.tasks, { title: "New TaskRendered" }],
   });
  }
 
@@ -76,6 +76,6 @@ type ExportDefaultProps = {
 
 export default (props: ExportDefaultProps) => {
  <div>
-  <TaskList initialTasks={props.tasks} />
+  <TasksList initialTasks={props.tasks} />
  </div>;
 };
