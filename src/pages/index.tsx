@@ -40,6 +40,7 @@ function HomePage({ session }: HomePageProps) {
     Hi {user?.name}
     <button onClick={() => signOut()}>SignOut</button>
    </ContentWrapperAccount>
+   {/* task list from reducer */}
    <ConnectedTaskList />
   </Provider>
  );

@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 
 interface IUserProps {
+ // isi datauser banyak
  dataUsers: [any];
 }
 
@@ -80,7 +81,7 @@ export const getStaticProps = async () => {
 
  return {
   props: {
-   dataUsers: dataUsers,
+   dataUsers,
   },
  };
 };

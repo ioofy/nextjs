@@ -14,5 +14,14 @@ export const fetchTasks = (): FetchTasksAction => ({
   {
    title: "Second Task",
   },
+  {
+   title: "Three Task",
+  },
+  {
+   title: "Four Task",
+  },
+  {
+   title: "Five Task",
+  },
  ],
 });
