@@ -1,10 +1,10 @@
+import React, { useEffect } from "react";
 import styled from "@emotion/styled";
 import ButtonLogin from "@components/ButtonLoginComponents/button-login";
 import MetaData from "@components/SEOComponents/seo";
 import Router from "next/router";
 import { colors } from "@styles/colors.styles";
 import { providers, getSession, signIn } from "next-auth/client";
-import React, { useEffect } from "react";
 
 type LoginPageProps = {
  providers: any;
@@ -61,6 +61,7 @@ const LoginPage = ({ providers, session }: LoginPageProps) => {
  );
 };
 
+// will return something depending the return what we providing when reload the webs
 LoginPage.getInitialProps = async (context: any) => {
  return {
   providers: await providers(),

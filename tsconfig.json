@@ -27,13 +27,14 @@
   "sourceMap": true,
   "strict": true,
   "target": "es2018",
-  "incremental": true,
+  "incremental": false,
   "baseUrl": "./",
   "paths": {
    "@components/*": ["src/components/*"],
    "@styles/*": ["src/styles/*"],
    "@layout/*": ["src/layout/*"],
-   "@interface/*": ["src/interface/*"]
+   "@interface/*": ["src/interface/*"],
+   "@utils/*": ["src/utils/*"]
   }
  },
  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

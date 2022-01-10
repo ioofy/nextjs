@@ -6,10 +6,10 @@ const Header = () => {
  return (
   <Nav className="navbar">
    <NavMenu>
-    {data.map((nav) => {
+    {data.map((navbar) => {
      return (
-      <NavMenuList key={nav.id} className="font-md">
-       <NavMenuLink href={nav.route}>{nav.name}</NavMenuLink>
+      <NavMenuList key={navbar.id} className="font-md">
+       <NavMenuLink href={navbar.route}>{navbar.name}</NavMenuLink>
       </NavMenuList>
      );
     })}

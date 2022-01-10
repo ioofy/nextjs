@@ -33,8 +33,8 @@ const UserDetail = (props: IUserDetailProps) => {
    <MetaData title={`Users Detail Page - ${user?.name}`} />
    <CardUser>
     <DataUser>User {user?.name} have data: </DataUser>
-    <DataUser>{user?.email}</DataUser>
-    <DataUser>{user?.website}</DataUser>
+    <DataUser>Email: {user?.email}</DataUser>
+    <DataUser>Website: {user?.website}</DataUser>
    </CardUser>
   </Wrapper>
  );

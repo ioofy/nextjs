@@ -12,6 +12,11 @@ export const NavMenu = styled.ul`
  list-style: none;
  justify-content: center;
  font-weight: 600;
+
+ @media screen and (max-width: 280px) {
+  flex-direction: column;
+  text-align: center;
+ }
 `;
 
 export const NavMenuList = styled.li`

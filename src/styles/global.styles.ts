@@ -26,6 +26,8 @@ const globalStyles = css`
   border: 1px solid pink;
   padding: 5px;
  }
+
+ /* validation about fontsize */
  .font-xl {
   font-size: 2.5rem;
  }

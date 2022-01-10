@@ -14,4 +14,9 @@ export const data = [
   route: "/users",
   name: "Users",
  },
+ {
+  id: 4,
+  route: "/tasks",
+  name: "Task",
+ },
 ];
